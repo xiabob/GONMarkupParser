@@ -18,7 +18,7 @@
 #import "GONMarkup.h"
 
 // Tag
-#define GONMarkupImage_TAG                 @"image"
+#define GONMarkupImage_TAG                 @"img"
 
 // Attributes
 #define GONMarkupImage_TAG_value_ATT       @"src"

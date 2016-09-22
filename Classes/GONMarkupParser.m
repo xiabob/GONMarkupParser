@@ -41,10 +41,12 @@
     GONMarkupParser *parser = [[GONMarkupParser alloc] init];
 
     // WIP
-    // [parser addMarkup:[GONMarkupImage imageMarkup]];
+    [parser addMarkup:[GONMarkupImage imageMarkup]];
 
     [parser addMarkup:[GONMarkupItalic italicMarkup]];
     [parser addMarkup:[GONMarkupBold boldMarkup]];
+    //GONMarkupStrong
+//    [parser addMarkup:[GONMarkupStrong strongMarkup]];
 
     [parser addMarkup:[GONMarkupDec decMarkup]];
     [parser addMarkup:[GONMarkupInc incMarkup]];
@@ -214,10 +216,12 @@
 
     // Prepare result string
     NSMutableAttributedString *resultString = [[NSMutableAttributedString alloc] init];
+    NSString *ignoreString = @"";
 
     // Browse chunks
     NSString *tag;
     BOOL autoclosingMarkup;
+    BOOL isIgnoreTag = NO;
     [resultString beginEditing];
     for (NSTextCheckingResult *result in results)
     {
@@ -225,7 +229,11 @@
         NSArray *parts = [[inputString substringWithRange:result.range] componentsSeparatedByString:@"<"];
 
         // Append extracted string
-        [resultString appendAttributedString:[self computeFinalExtractedString:[parts firstObject]]];
+        if (isIgnoreTag) {
+            ignoreString = [ignoreString stringByAppendingString:[parts firstObject]];
+        } else {
+            [resultString appendAttributedString:[self computeFinalExtractedString:[parts firstObject]]];
+        }
 
         // Check if a tag was found
         if (parts.count > 1)
@@ -234,6 +242,11 @@
             tag = [parts objectAtIndex:1];
             tag = [tag substringToIndex:tag.length - 1]; // Remove final >
             tag = [tag stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            
+            // 在 HTML 中，<br> 标签没有结束标签
+            if ([tag isEqualToString:@"br"]) {
+                tag = @"br /";
+            }
 
             if ([tag rangeOfString:@"/"].location == 0)
             {
@@ -242,6 +255,17 @@
 
                 // Trim potential remaining white spaces
                 tag = [tag stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                
+                if (isIgnoreTag && [tag rangeOfString:@"br"].length == 0) {
+                    if ([tag isEqualToString:@"blockquote"]) {
+                        isIgnoreTag = NO;
+                        [resultString appendAttributedString:[self computeFinalExtractedString:ignoreString]];
+                        ignoreString = @"";
+                    } else {
+                        continue;
+                    }
+                    
+                }
 
                 // Closing current tag, so append result string
                 [resultString appendAttributedString:[self computeSuffixString]];
@@ -258,6 +282,10 @@
 
                 // Trim potential remaining white spaces
                 tag = [tag stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                
+                if (isIgnoreTag && [tag rangeOfString:@"br"].length == 0) {
+                    continue;
+                }
 
                 // Split tag / attributes
                 tag = [self extractTagAndPushAttributesFromTag:tag];
@@ -278,6 +306,9 @@
                 }
                 else
                 {
+                    if ([tag isEqualToString:@"blockquote"]) {
+                        isIgnoreTag = YES;
+                    }
                     // Opening tag
                     [self handleOpeningTag:tag error:error];
                     [resultString appendAttributedString:[self computePrefixString]];

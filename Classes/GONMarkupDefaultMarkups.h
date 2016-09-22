@@ -14,7 +14,7 @@
 #import "GONMarkupDec.h"
 #import "GONMarkupFont.h"
 // WIP
-//#import "GONMarkupImage.h"
+#import "GONMarkupImage.h"
 #import "GONMarkupInc.h"
 #import "GONMarkupItalic.h"
 #import "GONMarkupLineBreak.h"

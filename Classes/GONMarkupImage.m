@@ -11,7 +11,7 @@
 @implementation GONMarkupImage
 + (instancetype)imageMarkup
 {
-    return [self markupForTag:@"image"];
+    return [self markupForTag: GONMarkupImage_TAG];
 }
 
 - (NSAttributedString *)updatedContentString:(NSString *)string context:(NSMutableDictionary *)context attributes:(NSDictionary *)dicAttributes stringAttributes:(NSDictionary *)stringAttributes

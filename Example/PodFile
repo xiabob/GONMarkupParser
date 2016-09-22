@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-link_with 'GONMarkupParserSample', 'GONMarkupParserSampleTests'
+target 'GONMarkupParserSample'
 
 platform :ios, '7.0'
 xcodeproj 'GONMarkupParserSample'
