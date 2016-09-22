@@ -72,12 +72,17 @@
                                                       forTag:@"red"]];
 
     // Custom markup, based on block
-    GONMarkupBlock *markupBlock = [GONMarkupBlock blockMarkup:@"custom"];
-    markupBlock.openingMarkupBlock = ^(NSMutableDictionary *configurationDictionary, NSString *tag, NSMutableDictionary *context, NSDictionary *dicAttributes) {
-        [configurationDictionary setObject:[UIFont boldSystemFontOfSize:69.0]
-                                    forKey:NSFontAttributeName];
-        [configurationDictionary setObject:[@"brown" representedColor]
-                                    forKey:NSForegroundColorAttributeName];
+    GONMarkupBlock *markupBlock = [GONMarkupBlock blockMarkup:@"blockquote"];
+    //    markupBlock.openingMarkupBlock = ^(NSMutableDictionary *configurationDictionary, NSString *tag, NSMutableDictionary *context, NSDictionary *dicAttributes) {
+    //        [configurationDictionary setObject:[UIFont boldSystemFontOfSize:69.0]
+    //                                    forKey:NSFontAttributeName];
+    //        [configurationDictionary setObject:[@"brown" representedColor]
+    //                                    forKey:NSForegroundColorAttributeName];
+    //    };
+    
+    markupBlock.updatedContentStringBlock = ^(NSString *string, NSMutableDictionary *context, NSDictionary *dicAttributes, NSDictionary *stringAttributes) {
+        NSString *processedString = [NSString stringWithFormat:@"“%@”\n", string];
+        return [[NSAttributedString alloc] initWithString:processedString];
     };
 
     [_parser addMarkup:markupBlock];

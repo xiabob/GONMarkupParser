@@ -85,8 +85,8 @@
 		5CE27199195B1412007FCF44 /* GONMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE27191195B1412007FCF44 /* GONMarkupParser.m */; };
 		5CE2719A195B1412007FCF44 /* GONMarkupFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE27193195B1412007FCF44 /* GONMarkupFont.m */; };
 		5CE2719B195B1412007FCF44 /* GONMarkupFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE27193195B1412007FCF44 /* GONMarkupFont.m */; };
-		6C6DD8957B134FA9B1AE1824 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B85795BD5D4A4195265653 /* libPods.a */; };
-		AD657A810CFC90EF7829443F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B85795BD5D4A4195265653 /* libPods.a */; };
+		7430B6371D93A085005D873A /* libPods-GONMarkupParserSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7430B6361D93A085005D873A /* libPods-GONMarkupParserSample.a */; };
+		7430B6381D93A0C4005D873A /* GONMarkupImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4241B61C89982000E5B289 /* GONMarkupImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17B85795BD5D4A4195265653 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B0BD421BD84A888C52787A4 /* Pods-GONMarkupParserSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GONMarkupParserSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-GONMarkupParserSample/Pods-GONMarkupParserSample.release.xcconfig"; sourceTree = "<group>"; };
 		5C1BA2E419BF45BD00E3D67C /* GONMarkupParser_Categories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GONMarkupParser_Categories.h; path = ../Classes/GONMarkupParser_Categories.h; sourceTree = "<group>"; };
 		5C1D1C2C19920D7100F7B642 /* GONMarkupParagrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GONMarkupParagrap.h; path = ../Classes/GONMarkupParagrap.h; sourceTree = "<group>"; };
 		5C1D1C2D19920D7100F7B642 /* GONMarkupParagrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GONMarkupParagrap.m; path = ../Classes/GONMarkupParagrap.m; sourceTree = "<group>"; };
@@ -207,8 +207,9 @@
 		5CE27191195B1412007FCF44 /* GONMarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GONMarkupParser.m; path = ../Classes/GONMarkupParser.m; sourceTree = "<group>"; };
 		5CE27192195B1412007FCF44 /* GONMarkupFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GONMarkupFont.h; path = ../Classes/GONMarkupFont.h; sourceTree = "<group>"; };
 		5CE27193195B1412007FCF44 /* GONMarkupFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GONMarkupFont.m; path = ../Classes/GONMarkupFont.m; sourceTree = "<group>"; };
-		F78DE98B74DE149CC7A5ADC1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		FD6D14F3EF0F1EE075363E64 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7430B6361D93A085005D873A /* libPods-GONMarkupParserSample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-GONMarkupParserSample.a"; path = "Pods/../build/Debug-iphoneos/libPods-GONMarkupParserSample.a"; sourceTree = "<group>"; };
+		9017F85482273017D0D00581 /* Pods-GONMarkupParserSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GONMarkupParserSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GONMarkupParserSample/Pods-GONMarkupParserSample.debug.xcconfig"; sourceTree = "<group>"; };
+		F7C1214976BA74367A8836F5 /* libPods-GONMarkupParserSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GONMarkupParserSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,11 +217,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7430B6371D93A085005D873A /* libPods-GONMarkupParserSample.a in Frameworks */,
 				5CD617E919828B2E0001C3D9 /* CoreText.framework in Frameworks */,
 				5CE27153195B11E0007FCF44 /* CoreGraphics.framework in Frameworks */,
 				5CE27155195B11E0007FCF44 /* UIKit.framework in Frameworks */,
 				5CE27151195B11E0007FCF44 /* Foundation.framework in Frameworks */,
-				6C6DD8957B134FA9B1AE1824 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +232,6 @@
 				5CE27170195B11E0007FCF44 /* XCTest.framework in Frameworks */,
 				5CE27172195B11E0007FCF44 /* UIKit.framework in Frameworks */,
 				5CE27171195B11E0007FCF44 /* Foundation.framework in Frameworks */,
-				AD657A810CFC90EF7829443F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +462,7 @@
 				5CE27175195B11E0007FCF44 /* GONMarkupParserSampleTests */,
 				5CE2714F195B11E0007FCF44 /* Frameworks */,
 				5CE2714E195B11E0007FCF44 /* Products */,
-				9ED8BC75C581B1C9016D9AE7 /* Pods */,
+				E73AD18BFDA49339B870F44C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -478,12 +478,13 @@
 		5CE2714F195B11E0007FCF44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7430B6361D93A085005D873A /* libPods-GONMarkupParserSample.a */,
 				5CD617E819828B2E0001C3D9 /* CoreText.framework */,
 				5CE27150195B11E0007FCF44 /* Foundation.framework */,
 				5CE27152195B11E0007FCF44 /* CoreGraphics.framework */,
 				5CE27154195B11E0007FCF44 /* UIKit.framework */,
 				5CE2716F195B11E0007FCF44 /* XCTest.framework */,
-				17B85795BD5D4A4195265653 /* libPods.a */,
+				F7C1214976BA74367A8836F5 /* libPods-GONMarkupParserSample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -608,11 +609,11 @@
 			name = DefaultMarkup;
 			sourceTree = "<group>";
 		};
-		9ED8BC75C581B1C9016D9AE7 /* Pods */ = {
+		E73AD18BFDA49339B870F44C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FD6D14F3EF0F1EE075363E64 /* Pods.debug.xcconfig */,
-				F78DE98B74DE149CC7A5ADC1 /* Pods.release.xcconfig */,
+				9017F85482273017D0D00581 /* Pods-GONMarkupParserSample.debug.xcconfig */,
+				0B0BD421BD84A888C52787A4 /* Pods-GONMarkupParserSample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -624,12 +625,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CE2717F195B11E0007FCF44 /* Build configuration list for PBXNativeTarget "GONMarkupParserSample" */;
 			buildPhases = (
-				EC3DF1B1D208418697196C2B /* Check Pods Manifest.lock */,
+				DD6CF384E25163FAE1B99800 /* [CP] Check Pods Manifest.lock */,
 				5CE27149195B11E0007FCF44 /* Sources */,
 				5CE2714A195B11E0007FCF44 /* Frameworks */,
 				5CE2714B195B11E0007FCF44 /* Resources */,
-				AF75F26F4574437294323C3C /* Copy Pods Resources */,
-				76B316C8E587F0981B66B953 /* Embed Pods Frameworks */,
+				CC766C0F98AE1019BAE24EB0 /* [CP] Embed Pods Frameworks */,
+				547C486F590E04558DF7AFB2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -644,12 +645,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CE27182195B11E0007FCF44 /* Build configuration list for PBXNativeTarget "GONMarkupParserSampleTests" */;
 			buildPhases = (
-				A00223591121399D271132D1 /* Check Pods Manifest.lock */,
 				5CE2716A195B11E0007FCF44 /* Sources */,
 				5CE2716B195B11E0007FCF44 /* Frameworks */,
 				5CE2716C195B11E0007FCF44 /* Resources */,
-				CA98D5286576877426AD6D21 /* Embed Pods Frameworks */,
-				4987DEF503902DACA3129A7C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -726,89 +724,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4987DEF503902DACA3129A7C /* Copy Pods Resources */ = {
+		547C486F590E04558DF7AFB2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GONMarkupParserSample/Pods-GONMarkupParserSample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		76B316C8E587F0981B66B953 /* Embed Pods Frameworks */ = {
+		CC766C0F98AE1019BAE24EB0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GONMarkupParserSample/Pods-GONMarkupParserSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A00223591121399D271132D1 /* Check Pods Manifest.lock */ = {
+		DD6CF384E25163FAE1B99800 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		AF75F26F4574437294323C3C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CA98D5286576877426AD6D21 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EC3DF1B1D208418697196C2B /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -823,6 +776,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7430B6381D93A0C4005D873A /* GONMarkupImage.m in Sources */,
 				5CB1C5B9195B55BE00590186 /* GONMarkupLineBreak.m in Sources */,
 				5CE2719A195B1412007FCF44 /* GONMarkupFont.m in Sources */,
 				5CE1493D19CC2B6900B73518 /* GONMarkupBold.m in Sources */,
@@ -993,7 +947,7 @@
 		};
 		5CE27180195B11E0007FCF44 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD6D14F3EF0F1EE075363E64 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 9017F85482273017D0D00581 /* Pods-GONMarkupParserSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1004,6 +958,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GONMarkupParserSample/GONMarkupParserSample-Prefix.pch";
 				INFOPLIST_FILE = "GONMarkupParserSample/GONMarkupParserSample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolasgoutaland.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1012,7 +970,7 @@
 		};
 		5CE27181195B11E0007FCF44 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F78DE98B74DE149CC7A5ADC1 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 0B0BD421BD84A888C52787A4 /* Pods-GONMarkupParserSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1023,6 +981,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GONMarkupParserSample/GONMarkupParserSample-Prefix.pch";
 				INFOPLIST_FILE = "GONMarkupParserSample/GONMarkupParserSample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolasgoutaland.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1031,7 +993,6 @@
 		};
 		5CE27183195B11E0007FCF44 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD6D14F3EF0F1EE075363E64 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GONMarkupParserSample.app/GONMarkupParserSample";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1055,7 +1016,6 @@
 		};
 		5CE27184195B11E0007FCF44 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F78DE98B74DE149CC7A5ADC1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GONMarkupParserSample.app/GONMarkupParserSample";
 				FRAMEWORK_SEARCH_PATHS = (
