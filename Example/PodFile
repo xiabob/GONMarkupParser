@@ -3,5 +3,4 @@ target 'GONMarkupParserSample'
 
 platform :ios, '7.0'
 xcodeproj 'GONMarkupParserSample'
-pod 'NSString+Color'
-pod 'LazyProperty'
+

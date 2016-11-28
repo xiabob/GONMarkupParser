@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "GONMarkupParser"
   s.version      = "0.7.2"
-  s.summary      = "NSAttributedString generation from NSString using XML, that can be easily extended."
+  s.summary      = "NSAttributedString generation from NSString using XML, that can be easily extended. Just edit for my app, this a fork from https://github.com/nicolasgoutaland/GONMarkupParser. You should use nicolasgoutaland/GONMarkupParser!!!"
   s.platform     = :ios, "7.0"
   s.description  = <<-DESC
 						Creating rich text under iOS can be cumbersome, needing a lot of code.
@@ -13,13 +13,12 @@ Pod::Spec.new do |s|
 						ARC only
 					DESC
 
-  s.homepage     = "https://github.com/nicolasgoutaland/GONMarkupParser"
+  s.homepage     = "https://github.com/xiabob/GONMarkupParser"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.author       = { "nicolasgoutaland" => "nicolas.goutaland@gmail.com" }
-  s.source       = { :git => "https://github.com/nicolasgoutaland/GONMarkupParser.git", :tag => "#{s.version}" }
+  s.author       = { "xiabob" => "xiabob@yeah.net" }
+  s.source       = { :git => "https://github.com/xiabob/GONMarkupParser.git", :tag => "#{s.version}" }
   s.source_files  = 'Classes', 'Classes/**/*.{h,m}'
   s.exclude_files = 'Classes/Exclude'
   s.requires_arc = true
-  s.dependency  "NSString+Color"
   s.framework    = 'CoreText'
 end
