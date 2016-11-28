@@ -9,6 +9,7 @@
 #import "GONMarkupAlignment.h"
 #import "GONMarkupAnchor.h"
 #import "GONMarkupBold.h"
+#import "GONMarkupStrong.h"
 #import "GONMarkupBlock.h"
 #import "GONMarkupColor.h"
 #import "GONMarkupDec.h"
@@ -27,3 +28,4 @@
 #import "GONMarkupReset.h"
 #import "GONMarkupSimple.h"
 #import "GONMarkupTextStyle.h"
+#import "GONMarkupSpan.h"
