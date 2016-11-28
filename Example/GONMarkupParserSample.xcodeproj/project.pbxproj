@@ -78,6 +78,7 @@
 		742A85631DEBD1930058CB75 /* UILabel+GONMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 742A853B1DEBD1930058CB75 /* UILabel+GONMarkupParser.m */; };
 		742A85641DEBD1930058CB75 /* UITextField+GONMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 742A853D1DEBD1930058CB75 /* UITextField+GONMarkupParser.m */; };
 		742A85651DEBD1930058CB75 /* UITextView+GONMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 742A853F1DEBD1930058CB75 /* UITextView+GONMarkupParser.m */; };
+		742A85681DEBDDDA0058CB75 /* GONMarkupBlockQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = 742A85671DEBDDDA0058CB75 /* GONMarkupBlockQuote.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +210,8 @@
 		742A853D1DEBD1930058CB75 /* UITextField+GONMarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+GONMarkupParser.m"; sourceTree = "<group>"; };
 		742A853E1DEBD1930058CB75 /* UITextView+GONMarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+GONMarkupParser.h"; sourceTree = "<group>"; };
 		742A853F1DEBD1930058CB75 /* UITextView+GONMarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+GONMarkupParser.m"; sourceTree = "<group>"; };
+		742A85661DEBDDDA0058CB75 /* GONMarkupBlockQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GONMarkupBlockQuote.h; sourceTree = "<group>"; };
+		742A85671DEBDDDA0058CB75 /* GONMarkupBlockQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GONMarkupBlockQuote.m; sourceTree = "<group>"; };
 		7430B6361D93A085005D873A /* libPods-GONMarkupParserSample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-GONMarkupParserSample.a"; path = "Pods/../build/Debug-iphoneos/libPods-GONMarkupParserSample.a"; sourceTree = "<group>"; };
 		9017F85482273017D0D00581 /* Pods-GONMarkupParserSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GONMarkupParserSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GONMarkupParserSample/Pods-GONMarkupParserSample.debug.xcconfig"; sourceTree = "<group>"; };
 		F7C1214976BA74367A8836F5 /* libPods-GONMarkupParserSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GONMarkupParserSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -472,6 +475,8 @@
 				742A85271DEBD1930058CB75 /* GONMarkupSpan.m */,
 				742A85281DEBD1930058CB75 /* GONMarkupStrong.h */,
 				742A85291DEBD1930058CB75 /* GONMarkupStrong.m */,
+				742A85661DEBDDDA0058CB75 /* GONMarkupBlockQuote.h */,
+				742A85671DEBDDDA0058CB75 /* GONMarkupBlockQuote.m */,
 				742A852A1DEBD1930058CB75 /* GONMarkupTextStyle.h */,
 				742A852B1DEBD1930058CB75 /* GONMarkupTextStyle.m */,
 				742A852C1DEBD1930058CB75 /* LazyProperty */,
@@ -698,6 +703,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				742A85511DEBD1930058CB75 /* GONMarkupNamedColor.m in Sources */,
+				742A85681DEBDDDA0058CB75 /* GONMarkupBlockQuote.m in Sources */,
 				5C65F4041A1139CD005A76A3 /* PlaygroundViewController.m in Sources */,
 				742A85571DEBD1930058CB75 /* GONMarkupReset.m in Sources */,
 				742A85481DEBD1930058CB75 /* GONMarkupFont.m in Sources */,

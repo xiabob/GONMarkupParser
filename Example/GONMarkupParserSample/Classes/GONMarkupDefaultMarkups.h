@@ -29,3 +29,4 @@
 #import "GONMarkupSimple.h"
 #import "GONMarkupTextStyle.h"
 #import "GONMarkupSpan.h"
+#import "GONMarkupBlockQuote.h"

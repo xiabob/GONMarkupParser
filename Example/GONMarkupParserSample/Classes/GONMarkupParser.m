@@ -47,6 +47,7 @@
     [parser addMarkup:[GONMarkupBold boldMarkup]];
     //GONMarkupStrong
     [parser addMarkup:[GONMarkupStrong strongMarkup]];
+    [parser addMarkup:[GONMarkupBlockQuote blockQuoteMarkup]];
     
     [parser addMarkup:[GONMarkupDec decMarkup]];
     [parser addMarkup:[GONMarkupInc incMarkup]];
