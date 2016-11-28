@@ -106,6 +106,11 @@
         }
     }
     
+    //font标签有值，只是不识别，使用默认内容；否则清除当前标签对应的属性。
+    if (dicAttributes.allValues.count > 0) {
+        resetFontAttribute = NO;
+    }
+    
     // Empty font parameter, reset configuration
     if (resetFontAttribute)
         [configurationDictionary removeObjectForKey:NSFontAttributeName];

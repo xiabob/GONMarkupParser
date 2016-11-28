@@ -276,32 +276,36 @@ static __strong NSRegularExpression *hexadecimalStringRegex;
 #pragma mark - Color
 - (UIColor *)colorFromRGBcode
 {
-    UIColor *color = [colorsCache objectForKey:self];
+    return [self colorFromRGBcode:self];
+}
+
+- (UIColor *)colorFromRGBcode:(NSString *)colorCode {
+    UIColor *color = [colorsCache objectForKey:colorCode];
     if (color)
         return color;
-
-	unsigned int colorRGBhexaCode = 0;
-
-	// Scan hex number
-	NSScanner *scanner = [[NSScanner alloc] initWithString:self];
-	[scanner scanHexInt:&colorRGBhexaCode];
-
-	// Extract color components
+    
+    unsigned int colorRGBhexaCode = 0;
+    
+    // Scan hex number
+    NSScanner *scanner = [[NSScanner alloc] initWithString:colorCode];
+    [scanner scanHexInt:&colorRGBhexaCode];
+    
+    // Extract color components
     unsigned int redColor   = (colorRGBhexaCode >> 16);
     unsigned int greenColor = (colorRGBhexaCode >>  8) & 0x00FF;
     unsigned int blueColor  =  colorRGBhexaCode        & 0x0000FF;
-
-	// Create result color
-	color = [UIColor colorWithRed:redColor/255.0 green:greenColor/255.0 blue:blueColor/255.0 alpha:1.0];
-
+    
+    // Create result color
+    color = [UIColor colorWithRed:redColor/255.0 green:greenColor/255.0 blue:blueColor/255.0 alpha:1.0];
+    
     // Update cache
     if (color)
     {
         [colorsCache setObject:color
-                        forKey:self];
+                        forKey:colorCode];
     }
-
-	return color;
+    
+    return color;
 }
 
 - (UIColor *)colorFromRGBAcode
@@ -309,30 +313,30 @@ static __strong NSRegularExpression *hexadecimalStringRegex;
     UIColor *color = [colorsCache objectForKey:self];
     if (color)
         return color;
-
-	unsigned int colorRGBhexaCode = 0;
-
-	// Scan hex number
-	NSScanner *scanner = [[NSScanner alloc] initWithString:self];
-	[scanner scanHexInt:&colorRGBhexaCode];
-
-	// Extract color components
+    
+    unsigned int colorRGBhexaCode = 0;
+    
+    // Scan hex number
+    NSScanner *scanner = [[NSScanner alloc] initWithString:self];
+    [scanner scanHexInt:&colorRGBhexaCode];
+    
+    // Extract color components
     unsigned int redColor   = (colorRGBhexaCode >> 24);
     unsigned int greenColor = (colorRGBhexaCode >> 16) & 0x00FF;
     unsigned int blueColor  = (colorRGBhexaCode >>  8) & 0x0000FF;
     unsigned int alphaColor =  colorRGBhexaCode        & 0x000000FF;
-
-	// Create result color
-	color = [UIColor colorWithRed:redColor/255.0f green:greenColor/255.0f blue:blueColor/255.0f alpha:alphaColor/255.0f];
-
+    
+    // Create result color
+    color = [UIColor colorWithRed:redColor/255.0f green:greenColor/255.0f blue:blueColor/255.0f alpha:alphaColor/255.0f];
+    
     // Update cache
     if (color)
     {
         [colorsCache setObject:color
                         forKey:self];
     }
-
-	return color;
+    
+    return color;
 }
 
 - (UIColor *)colorFromName
@@ -340,17 +344,17 @@ static __strong NSRegularExpression *hexadecimalStringRegex;
     UIColor *color = [colorsCache objectForKey:self];
     if (color)
         return color;
-
+    
     // Check custom colors
     color = [[self class] registeredColorForKey:self];
     if (color)
         return color;
-
+    
     // Check for web color
     color = [[self class] webColorForKey:self];
     if (color)
         return color;
-
+    
     SEL sel = NSSelectorFromString(self);
     if ([UIColor respondsToSelector:sel])
     {
@@ -362,14 +366,14 @@ static __strong NSRegularExpression *hexadecimalStringRegex;
         if ([UIColor respondsToSelector:selColor])
             color = [UIColor performSelector:selColor];
     }
-
+    
     // Update cache
     if (color)
     {
         [colorsCache setObject:color
                         forKey:self];
     }
-
+    
     return color;
 }
 
@@ -379,25 +383,39 @@ static __strong NSRegularExpression *hexadecimalStringRegex;
     UIColor *color = [colorsCache objectForKey:self];
     if (color)
         return color;
-
+    
     // Hexadecimal code, starting with #
     if ([self rangeOfString:NSString_Color_HEXADECIMAL_PREFIX].location == 0)
     {
+        //处理类似#000，对应着#000000这种
+        if (self.length == 4) {
+            NSString *r = [self substringWithRange:NSMakeRange(0, 1)];
+            r = [r stringByAppendingString:r];
+            
+            NSString *g = [self substringWithRange:NSMakeRange(1, 1)];
+            g = [g stringByAppendingString:g];
+            
+            NSString *b = [self substringWithRange:NSMakeRange(2, 1)];
+            b = [b stringByAppendingString:b];
+            
+            return [self colorFromRGBcode:[NSString stringWithFormat:@"%@%@%@", r, g, b]];
+        }
+        
         // RGB Code
         if (self.length == 7)
             return [[self substringFromIndex:1] colorFromRGBcode];
-
+        
         // RGBA Code
         return [[self substringFromIndex:1] colorFromRGBAcode];
     }
-
+    
     // Hexadecimal code without #
     NSRange firstMatch = [hexadecimalStringRegex rangeOfFirstMatchInString:self options:0 range:NSMakeRange(0, self.length)];
     if (firstMatch.location == 0 && firstMatch.length == self.length)
     {
         if (self.length == 6)
             return [self colorFromRGBcode];
-
+        
         return [self colorFromRGBAcode];
     }
     
@@ -416,7 +434,7 @@ static __strong NSRegularExpression *hexadecimalStringRegex;
         
         return [UIColor colorWithRed:r/255 green:g/255 blue:b/255 alpha:1];
     }
-
+    
     // Final test, check for selector name, web colors
     return [self colorFromName];
 }
