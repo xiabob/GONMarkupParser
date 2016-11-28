@@ -32,7 +32,7 @@
 {
     if (_updatedContentStringBlock)
         return _updatedContentStringBlock(string, context, dicAttributes, stringAttributes);
-
+    
     return [super updatedContentString:string context:context attributes:dicAttributes stringAttributes:stringAttributes];
 }
 
@@ -40,7 +40,7 @@
 {
     if (_prefixStringForContextBlock)
         return _prefixStringForContextBlock(context, dicAttributes, stringAttributes);
-
+    
     return [super prefixStringForContext:context attributes:dicAttributes stringAttributes:stringAttributes];
 }
 
@@ -48,7 +48,7 @@
 {
     if (_suffixStringForContextBlock)
         return _suffixStringForContextBlock(context, dicAttributes, stringAttributes);
-
+    
     return [super suffixStringForContext:context attributes:dicAttributes stringAttributes:stringAttributes];
 }
 @end

@@ -2,5 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'GONMarkupParserSample'
 
 platform :ios, '7.0'
-xcodeproj 'GONMarkupParserSample'
+	pod 'YYText'
+	pod 'YYWebImage'
+
 

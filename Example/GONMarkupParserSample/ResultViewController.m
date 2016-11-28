@@ -7,10 +7,11 @@
 //
 
 #import "ResultViewController.h"
+#import <YYText/YYText.h>
 
 @interface ResultViewController ()
-// Outlets
-@property (nonatomic, weak) IBOutlet UITextView  *resultTextView;
+
+@property (nonatomic, strong) YYTextView  *resultTextView;
 @end
 
 @implementation ResultViewController
@@ -21,6 +22,11 @@
 
     // Title
     self.title = @"Result";
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    _resultTextView = [[YYTextView alloc] initWithFrame:frame];
+    [self.view addSubview:_resultTextView];
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -10,11 +10,6 @@
 
 #import "GONMarkup.h"
 
-// Tag
-#define GONMarkupBlock_TAG                 @"blockquote"
-
-// Attributes
-#define GONMarkupBlock_TAG_value_ATT       @"class"
 
 @interface GONMarkupBlock : GONMarkup
 /* Class contructor

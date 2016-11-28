@@ -31,4 +31,8 @@
 @interface GONMarkupAnchor : GONMarkup
 /* Default markup to add anchor support */
 + (instancetype)anchorMarkup;
+
+
+@property (nonatomic, copy) void(^openingMarkupBlock)(NSMutableDictionary *configurationDictionary, NSString *tag, NSMutableDictionary *context, NSDictionary *dicAttributes);  // Called when opening tag is found
+
 @end

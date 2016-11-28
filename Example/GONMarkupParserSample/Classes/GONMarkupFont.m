@@ -26,7 +26,7 @@
 {
     NSString *value;
     BOOL resetFontAttribute = YES;
-
+    
     // Text color
     value = [dicAttributes objectForKey:GONMarkupFont_TAG_color_ATT];
     if (value)
@@ -35,7 +35,7 @@
                                     forKey:NSForegroundColorAttributeName];
         resetFontAttribute = NO;
     }
-
+    
     // Font name
     value = [dicAttributes objectForKey:GONMarkupFont_TAG_name_ATT];
     if (value)
@@ -45,7 +45,7 @@
         NSString *sizeValue = [dicAttributes objectForKey:GONMarkupFont_TAG_size_ATT];
         if (sizeValue)
         {
-            size = [sizeValue floatValue];
+            size = [sizeValue floatValue] * 7;
         }
         else
         {
@@ -55,7 +55,7 @@
             else
                 size = [UIFont systemFontSize];
         }
-
+        
         // Try to load font from registered ones
         UIFont *font = [self.parser fontForKey:value];
         if (!font)
@@ -68,11 +68,11 @@
             // Font found, update its size
             font = [UIFont fontWithDescriptor:font.fontDescriptor size:[sizeValue floatValue]];
         }
-
+        
         // Update configuration
         [configurationDictionary setObject:font
-                                     forKey:NSFontAttributeName];
-
+                                    forKey:NSFontAttributeName];
+        
         resetFontAttribute = NO;
     }
     else
@@ -82,7 +82,7 @@
         if (value)
         {
             // Extract size
-            CGFloat size = [value floatValue];
+            CGFloat size = [value floatValue] * 7;
             
             // Look for current font
             UIFont *currentFont = [configurationDictionary objectForKey:NSFontAttributeName];
@@ -101,11 +101,11 @@
             // Update configuration
             [configurationDictionary setObject:currentFont
                                         forKey:NSFontAttributeName];
-
+            
             resetFontAttribute = NO;
         }
     }
-
+    
     // Empty font parameter, reset configuration
     if (resetFontAttribute)
         [configurationDictionary removeObjectForKey:NSFontAttributeName];
