@@ -276,18 +276,14 @@ static __strong NSRegularExpression *hexadecimalStringRegex;
 #pragma mark - Color
 - (UIColor *)colorFromRGBcode
 {
-    return [self colorFromRGBcode:self];
-}
-
-- (UIColor *)colorFromRGBcode:(NSString *)colorCode {
-    UIColor *color = [colorsCache objectForKey:colorCode];
+    UIColor *color = [colorsCache objectForKey:self];
     if (color)
         return color;
     
     unsigned int colorRGBhexaCode = 0;
     
     // Scan hex number
-    NSScanner *scanner = [[NSScanner alloc] initWithString:colorCode];
+    NSScanner *scanner = [[NSScanner alloc] initWithString:self];
     [scanner scanHexInt:&colorRGBhexaCode];
     
     // Extract color components
@@ -302,7 +298,7 @@ static __strong NSRegularExpression *hexadecimalStringRegex;
     if (color)
     {
         [colorsCache setObject:color
-                        forKey:colorCode];
+                        forKey:self];
     }
     
     return color;
@@ -389,16 +385,11 @@ static __strong NSRegularExpression *hexadecimalStringRegex;
     {
         //处理类似#000，对应着#000000这种
         if (self.length == 4) {
-            NSString *r = [self substringWithRange:NSMakeRange(0, 1)];
-            r = [r stringByAppendingString:r];
+            NSString *r = [self substringWithRange:NSMakeRange(1, 1)];
+            NSString *g = [self substringWithRange:NSMakeRange(2, 1)];
+            NSString *b = [self substringWithRange:NSMakeRange(3, 1)];
             
-            NSString *g = [self substringWithRange:NSMakeRange(1, 1)];
-            g = [g stringByAppendingString:g];
-            
-            NSString *b = [self substringWithRange:NSMakeRange(2, 1)];
-            b = [b stringByAppendingString:b];
-            
-            return [self colorFromRGBcode:[NSString stringWithFormat:@"%@%@%@", r, g, b]];
+            return [[NSString stringWithFormat:@"%@%@%@%@%@%@", r, r, g, g, b, b] colorFromRGBcode];
         }
         
         // RGB Code
@@ -438,4 +429,5 @@ static __strong NSRegularExpression *hexadecimalStringRegex;
     // Final test, check for selector name, web colors
     return [self colorFromName];
 }
+
 @end
